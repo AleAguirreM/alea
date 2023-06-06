@@ -28,7 +28,7 @@ df1 = pd.read_csv('vih.csv')  # base actual
 df2 = pd.read_csv('causas_muertes.csv')  # base actual
 
 # Tratamiento de datos 
-df0[['fecha_muestra']] = df0[['fecha_muestra']].apply(
+df0['fecha_muestra'] = df0['fecha_muestra'].apply(
     pd.to_datetime, format='%Y/%m/%d')
 df0['año'] = df0['fecha_muestra'].dt.year
 df1.columns = ['año', 'distritos', 'genero', 'edad', 'raza/etnia', 'diagnosticos_vih', 'tasa_diagnostico_vih',
